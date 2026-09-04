@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloom OS</title>
+    <style>
+      :root {
+        --ink: #303447;
+        --muted: #73788b;
+        --paper: #ffffff;
+        --accent: #a56f88;
+        --accent-light: #f4e8ef;
+        --line: #e4e1eb;
+        --shadow: 0 18px 45px rgba(74, 64, 101, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        overflow: hidden;
+        color: var(--ink);
+        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+        background: #dfe7f2;
+      }
+
+      .desktop {
+        min-height: 100vh;
+        position: relative;
+        padding: 34px 34px 100px;
+        background: linear-gradient(135deg, #dfe7f2, #e8def0 55%, #dcefe9);
+      }
+
+      .brand {
+        position: relative;
+        z-index: 1;
+        color: #ffffff;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-shadow: 0 2px 8px rgba(74, 64, 101, 0.18);
+      }
+
+      .brand span {
+        color: #f8e7ef;
+      }
+
+      .window {
+        position: absolute;
+        z-index: 2;
+        top: 92px;
+        left: 50%;
+        width: min(680px, calc(100vw - 40px));
+        min-height: 430px;
+        transform: translateX(-50%);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: var(--shadow);
+        animation: appear 0.45s ease-out;
+      }
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateX(-50%) translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+      }
+
+      .window-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 18px;
+        background: #fffafd;
+        border-bottom: 1px solid var(--line);
+      }
+      .window-title {
+        font-weight: 800;
+      }
+      .window-buttons {
+        display: flex;
+        gap: 7px;
+      }
+      .window-buttons button {
+        width: 13px;
+        height: 13px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .close {
+        background: #d8c4cf;
+      }
+      .minimize {
+        background: #e6dce5;
+      }
+
+      .window-content {
+        padding: 34px 42px 38px;
+      }
+      h1 {
+        max-width: 480px;
+        margin: 0 0 8px;
+        color: var(--accent);
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.02;
+      }
+      .subtitle {
+        margin: 0 0 28px;
+        color: var(--muted);
+      }
+      .quiz-step {
+        display: none;
+      }
+      .quiz-step.active {
+        display: block;
+      }
+      .question-count {
+        margin: 0 0 12px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      h3 {
+        margin: 0 0 18px;
+        font-size: 19px;
+      }
+
+      .btn-option {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px 17px;
+        color: var(--ink);
+        text-align: left;
+        font: inherit;
+        font-weight: 700;
+        border: 2px solid var(--line);
+        border-radius: 11px;
+        background: white;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+      .btn-option:hover {
+        transform: translateX(5px);
+        border-color: var(--accent);
+        box-shadow: 0 5px 14px rgba(63, 115, 118, 0.14);
+      }
+      .result-card {
+        padding: 20px;
+        border-radius: 12px;
+        background: var(--accent-light);
+        border-left: 5px solid var(--accent);
+      }
+      .result-card strong {
+        color: var(--accent);
+        font-size: 20px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 5px 9px;
+        color: var(--accent);
+        border-radius: 6px;
+        background: #d5e7e7;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .restart-btn {
+        margin-top: 20px;
+        padding: 12px 20px;
+        color: white;
+        border: 0;
+        border-radius: 9px;
+        background: var(--accent);
+        cursor: pointer;
+        font: inherit;
+        font-weight: 800;
+      }
+
+      .taskbar {
+        position: fixed;
+        z-index: 5;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 11px 20px;
+        color: white;
+        background: rgba(74, 64, 101, 0.84);
+        backdrop-filter: blur(14px);
+      }
+      .start-button {
+        border: 0;
+        color: white;
+        background: transparent;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      .taskbar-center {
+        display: flex;
+        gap: 10px;
+      }
+      .taskbar-app {
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 10px;
+        color: white;
+        background: rgba(255, 255, 255, 0.15);
+        cursor: pointer;
+        font-size: 19px;
+      }
+      .status {
+        font-size: 13px;
+        text-align: right;
+      }
+      .hidden {
+        display: none;
+      }
+
+      @media (max-width: 700px) {
+        body {
+          overflow: auto;
+        }
+        .desktop {
+          padding: 22px 18px 95px;
+          min-height: 100vh;
+        }
+        .window {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          min-height: 0;
+          margin: 28px 0 0;
+          transform: none;
+        }
+        .window-content {
+          padding: 26px 20px 30px;
+        }
+        @keyframes appear {
+          from {
+            opacity: 0;
+            transform: translateY(14px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="desktop">
+      <div class="brand">bloom<span>OS</span></div>
+
+      <section class="window" id="main-window">
+        <header class="window-bar">
+          <span class="window-title">✦ Wellbeing Matcher</span>
+          <div class="window-buttons">
+            <button
+              class="minimize"
+              aria-label="Minimize"
+              onclick="minimizeWindow()"
+            ></button>
+            <button
+              class="close"
+              aria-label="Close"
+              onclick="closeWindow()"
+            ></button>
+          </div>
+        </header>
+        <div class="window-content">
+          <h1>Find your digital balance.</h1>
+          <p class="subtitle">
+            A private little guide to kinder screen habits.
+          </p>
+
+          <div id="step-1" class="quiz-step active">
+            <p class="question-count">Question 1 of 4</p>
+            <h3>What would you like to change?</h3>
+            <button class="btn-option" onclick="nextStep('focus')">
+              I get distracted when working or studying
+            </button>
+            <button class="btn-option" onclick="nextStep('disconnect')">
+              I carry work stress home or keep checking messages
+            </button>
+            <button class="btn-option" onclick="nextStep('screentime')">
+              I endlessly scroll social media on my phone
+            </button>
+          </div>
+
+          <div id="step-2" class="quiz-step">
+            <p class="question-count">Question 2 of 4</p>
+            <h3>When do you need the most support?</h3>
+            <button class="btn-option" onclick="nextQuestion(3)">
+              During work or study hours
+            </button>
+            <button class="btn-option" onclick="nextQuestion(3)">
+              In the evening after a busy day
+            </button>
+            <button class="btn-option" onclick="nextQuestion(3)">
+              On weekends and free days
+            </button>
+          </div>
+
+          <div id="step-3" class="quiz-step">
+            <p class="question-count">Question 3 of 4</p>
+            <h3>What kind of change sounds best?</h3>
+            <button class="btn-option" onclick="nextQuestion(4)">
+              A gentle reminder to pause
+            </button>
+            <button class="btn-option" onclick="nextQuestion(4)">
+              A strong block that keeps me focused
+            </button>
+            <button class="btn-option" onclick="nextQuestion(4)">
+              A playful challenge or reward
+            </button>
+          </div>
+
+          <div id="step-4" class="quiz-step">
+            <p class="question-count">Question 4 of 4</p>
+            <h3>How much setup time feels right?</h3>
+            <button class="btn-option" onclick="showResult()">
+              I want something ready in a minute
+            </button>
+            <button class="btn-option" onclick="showResult()">
+              I can spend a few minutes customizing it
+            </button>
+            <button class="btn-option" onclick="showResult()">
+              I enjoy exploring all the settings
+            </button>
+          </div>
+
+          <div id="step-result" class="quiz-step">
+            <h3>Your personalized recommendation</h3>
+            <div id="app-output"></div>
+            <button class="restart-btn" onclick="restartQuiz()">
+              Start over
+            </button>
+          </div>
+          <p id="about" class="subtitle hidden">
+            Bloom OS keeps this guide simple: no cookies, no sign-in, just a
+            calm recommendation.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="taskbar">
+      <button
+        class="start-button"
+        aria-label="Open wellbeing app"
+        onclick="openWindow()"
+      >
+        ✿
+      </button>
+      <div class="taskbar-center">
+        <button class="taskbar-app" onclick="openWindow()">✦</button
+        ><button class="taskbar-app" onclick="showAbout()">☁</button>
+      </div>
+      <div class="status">
+        <span id="clock"></span><br />Bloom network · protected
+      </div>
+    </footer>
+
+    <script>
+      const appDatabase = {
+        focus: {
+          name: "Forest",
+          desc: "Gamifies focus by letting you plant a virtual tree that dies if you leave the app to check social media.",
+          badge: "GDPR Compliant & High Engagement",
+        },
+        disconnect: {
+          name: "Freedom",
+          desc: "Blocks specific apps and websites across all your devices simultaneously, allowing you to honor the Right to Disconnect.",
+          badge: "Excellent for Remote Workers",
+        },
+        screentime: {
+          name: "Opal / Minimalist Phone",
+          desc: "Strips away addictive colorful icons and locks you out of deep-scroll apps using hard barriers.",
+          badge: "Dark-Pattern Free Vetting",
+        },
+      };
+
+      function nextStep(choice) {
+        document.getElementById("step-1").classList.remove("active");
+        window.selectedChoice = choice;
+        document.getElementById("step-2").classList.add("active");
+      }
+
+      function nextQuestion(stepNumber) {
+        document.querySelector(".quiz-step.active").classList.remove("active");
+        document.getElementById(`step-${stepNumber}`).classList.add("active");
+      }
+
+      function showResult() {
+        document.querySelector(".quiz-step.active").classList.remove("active");
+        const recommendation = appDatabase[window.selectedChoice];
+        document.getElementById("app-output").innerHTML =
+          `<div class="result-card"><strong>✧ App match: ${recommendation.name}</strong><p>${recommendation.desc}</p><span class="badge">EU · ${recommendation.badge}</span></div>`;
+        document.getElementById("step-result").classList.add("active");
+      }
+
+      function restartQuiz() {
+        document.getElementById("step-result").classList.remove("active");
+        document.getElementById("step-2").classList.remove("active");
+        document.getElementById("step-3").classList.remove("active");
+        document.getElementById("step-4").classList.remove("active");
+        document.getElementById("step-1").classList.add("active");
+      }
+
+      function closeWindow() {
+        document.getElementById("main-window").classList.add("hidden");
+      }
+      function minimizeWindow() {
+        document.getElementById("main-window").style.transform =
+          "translateX(-50%) scale(.86)";
+      }
+      function openWindow() {
+        document.getElementById("main-window").classList.remove("hidden");
+        document.getElementById("main-window").style.transform = "";
+      }
+      function showAbout() {
+        document.getElementById("about").classList.toggle("hidden");
+        openWindow();
+      }
+      function toggleTheme() {
+        document.body.classList.toggle("warm-theme");
+      }
+      function updateClock() {
+        document.getElementById("clock").textContent =
+          new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+      }
+      updateClock();
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>
