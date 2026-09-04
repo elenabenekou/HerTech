@@ -31,22 +31,8 @@
       .desktop {
         min-height: 100vh;
         position: relative;
-        padding: 34px 34px 100px;
+        padding: 34px;
         background: linear-gradient(135deg, #dfe7f2, #e8def0 55%, #dcefe9);
-      }
-
-      .brand {
-        position: relative;
-        z-index: 1;
-        color: #ffffff;
-        font-size: 28px;
-        font-weight: 900;
-        letter-spacing: 0;
-        text-shadow: 0 2px 8px rgba(74, 64, 101, 0.18);
-      }
-
-      .brand span {
-        color: #f8e7ef;
       }
 
       .window {
@@ -192,45 +178,6 @@
         font-weight: 800;
       }
 
-      .taskbar {
-        position: fixed;
-        z-index: 5;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 11px 20px;
-        color: white;
-        background: rgba(74, 64, 101, 0.84);
-        backdrop-filter: blur(14px);
-      }
-      .start-button {
-        border: 0;
-        color: white;
-        background: transparent;
-        font-size: 25px;
-        cursor: pointer;
-      }
-      .taskbar-center {
-        display: flex;
-        gap: 10px;
-      }
-      .taskbar-app {
-        width: 38px;
-        height: 38px;
-        border: 0;
-        border-radius: 10px;
-        color: white;
-        background: rgba(255, 255, 255, 0.15);
-        cursor: pointer;
-        font-size: 19px;
-      }
-      .status {
-        font-size: 13px;
-        text-align: right;
-      }
       .hidden {
         display: none;
       }
@@ -270,8 +217,6 @@
   </head>
   <body>
     <main class="desktop">
-      <div class="brand">bloom<span>OS</span></div>
-
       <section class="window" id="main-window">
         <header class="window-bar">
           <span class="window-title">✦ Wellbeing Matcher</span>
@@ -364,23 +309,6 @@
         </div>
       </section>
     </main>
-
-    <footer class="taskbar">
-      <button
-        class="start-button"
-        aria-label="Open wellbeing app"
-        onclick="openWindow()"
-      >
-        ✿
-      </button>
-      <div class="taskbar-center">
-        <button class="taskbar-app" onclick="openWindow()">✦</button
-        ><button class="taskbar-app" onclick="showAbout()">☁</button>
-      </div>
-      <div class="status">
-        <span id="clock"></span><br />Bloom network · protected
-      </div>
-    </footer>
 
     <script>
       const appDatabase = {
