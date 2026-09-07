@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Digital Wellbeing Center</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="bg-primary text-white rounded-4 text-center mx-4 my-3 p-5">
+      This is so awesome
+    </div>
+    <div id="header">
+      <h1 id="hello">Hello World</h1>
+
+      <h2>Welcome to my site!</h2>
+      <hr />
+    </div>
+
+    <div id="main">
+      <button id="pink-puppy-button">Pink puppy</button>
+      <button id="blue-puppy-button">Blue puppy</button>
+
+      <div>
+        I love my puppy! <span id="puppy-text">She is so pink and cute!</span>
+      </div>
+      <div><img id="puppy-image" src="./pink-puppy.png" /></div>
+
+      <div>
+        <p>
+          I am currently learning to code with
+          <a href="/#">Code First Girls</a>. Going over everything from how the
+          internet works, to creating websites and version control with git. A
+          lot to cover in only 8 weeks! Everyone should learn to code, here are
+          some pretty good reasons why...
+        </p>
+
+        <ol>
+          <li>HTML is cool</li>
+          <li>CSS is cooler</li>
+          <li id="js-list-item" class="clickable">JS is the best</li>
+        </ol>
+      </div>
+
+      <div>
+        <hr />
+        <h2><i>What do you need to create a website?</i></h2>
+
+        <p>Not much!</p>
+
+        <ul>
+          <li>A text editor (I am using atom)</li>
+          <li>A web browser (I am using chrome)</li>
+          <li>Some HTML, CSS and JS files</li>
+        </ul>
+
+        <p>Follow my progress on <a href="https://github.com/">Github</a></p>
+      </div>
+    </div>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Accordion Item #1
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>First of all.</strong> bla bla bla <code>.ooo</code>,
+            blablabla.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Accordion Item #2
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the second item’s accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It’s also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            Accordion Item #3
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <strong>This is the third item’s accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or
+            overriding our default variables. It’s also worth noting that just
+            about any HTML can go within the <code>.accordion-body</code>,
+            though the transition does limit overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="box"></div>
+      </div>
+      <div class="col-12">
+        <div class="box"></div>
+      </div>
+      <div class="col-9">
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <script>
+      const jsListItem = document.getElementById("js-list-item");
+
+      jsListItem.addEventListener("click", function () {
+        alert("Javascript is for sure the best!!!");
+      });
+
+      const pinkPuppyButton = document.getElementById("pink-puppy-button");
+      const bluePuppyButton = document.getElementById("blue-puppy-button");
+
+      const puppyImage = document.getElementById("puppy-image");
+      const puppyText = document.getElementById("puppy-text");
+
+      pinkPuppyButton.addEventListener("click", function () {
+        puppyImage.src = "./pink-puppy.png";
+        puppyText.textContent = "She is so pink and cute!";
+        puppyText.style.color = "pink";
+      });
+
+      bluePuppyButton.addEventListener("click", function () {
+        puppyImage.src = "./blue-puppy.png";
+        puppyText.textContent = "She is so blue and cute!";
+        puppyText.style.color = "blue";
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
