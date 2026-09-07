@@ -1,0 +1,70 @@
+body {
+  background-color: #f1ede2;
+}
+
+p {
+  color: black;
+  font-size: 30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  color: black;
+  font-size: 40px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+  width: stretch;
+  border-radius: 10px;
+}
+
+.row-gap-7 {
+  row-gap: 7rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.reveal-left {
+  transform: translateX(-55px);
+}
+
+.reveal-right {
+  transform: translateX(55px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.reveal img {
+  transition: transform 500ms ease;
+}
+
+.reveal h2,
+.reveal p {
+  transform: translateY(var(--scroll-shift, 0px));
+  transition: transform 120ms ease-out;
+}
+
+.reveal.is-visible img:hover {
+  transform: scale(1.04) rotate(1deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal img,
+  .reveal h2,
+  .reveal p {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
