@@ -8,10 +8,10 @@ body {
   font-family: Arial, sans-serif;
   background-color: #eef5f1;
   color: #2f4038;
-  padding: 30px;
 }
 
 .container {
+  padding: 30px;
   max-width: 1000px;
   margin: auto;
 }
