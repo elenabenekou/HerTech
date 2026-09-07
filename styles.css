@@ -1,0 +1,348 @@
+.bg-primary {
+  background-color: rgb(220, 147, 147) !important;
+}
+
+.text-white {
+  color: rgb(243, 239, 239) !important;
+}
+
+.bg-green {
+  background: linear-gradient(135deg, #abd6c3, #f5f4ed);
+}
+
+/* ============ TOKENS ============ */
+:root {
+  --cream: #f1ede2;
+  --cream-2: #efe6d8;
+  --sage-light: #e1e0cf;
+  --sage: #a7ad84;
+  --olive: #8fb39a;
+  --olive-dark: #96b09e;
+  --olive-deep: #9dc4aa;
+  --footer-bg: #8fb39a;
+  --ink: #2b2b22;
+  --ink-soft: #4a4a3b;
+  --line: #c9c2ac;
+  --white: #fdfcf8;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
+}
+
+a {
+  color: inherit;
+}
+
+.dwb-underline {
+  text-decoration: underline;
+}
+
+/* ============ BUTTONS ============ */
+.btn {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.7rem 1.3rem;
+  border-radius: 3px;
+}
+.dwb-btn-donate {
+  background: var(--sage);
+  color: var(--ink);
+}
+.dwb-btn-donate:hover {
+  background: var(--olive);
+  color: var(--white);
+}
+.dwb-btn-olive {
+  background: var(--olive);
+  color: var(--white);
+}
+.dwb-btn-olive:hover {
+  background: var(--olive-dark);
+  color: var(--white);
+}
+.dwb-btn-about {
+  background: #5d7d70;
+  color: var(--white);
+}
+.dwb-btn-about:hover {
+  background: #719888;
+  color: var(--white);
+}
+.dwb-btn-darkpastelgreen {
+  background: #99bda4;
+  color: var(--cream);
+}
+.dwb-btn-darkpastelgreen:hover {
+  background: #99bda4;
+  color: var(--cream);
+}
+.dwb-btn-olive-dark {
+  background: var(--olive-deep);
+  color: var(--white);
+}
+.dwb-btn-olive-dark:hover {
+  background: var(--olive-dark);
+  color: var(--white);
+}
+.dwb-btn-outline {
+  background: var(--olive);
+  color: var(--white);
+  font-size: 0.66rem;
+}
+.dwb-btn-outline:hover {
+  background: var(--olive-dark);
+  color: var(--white);
+}
+.dwb-btn-light {
+  background: var(--sage);
+  color: var(--ink);
+}
+.dwb-btn-light:hover {
+  background: #c3c9a4;
+  color: var(--ink);
+}
+
+/* ============ NAVBAR ============ */
+.dwb-navbar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+}
+.dwb-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--ink);
+}
+.dwb-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.dwb-brand-line1 {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.dwb-brand-line2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+.dwb-nav .nav-link {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  text-transform: uppercase;
+  padding: 0.5rem 0.9rem;
+}
+.dwb-nav .nav-link:hover {
+  color: var(--olive-dark);
+}
+.dwb-nav .dropdown-menu {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.dwb-nav .dropdown-item {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.dwb-nav .dropdown-item:hover {
+  background: var(--cream-2);
+}
+
+/* ============ HERO ============ */
+.dwb-hero {
+  background: var(--cream-2);
+  overflow: hidden;
+}
+.dwb-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.dwb-h1 {
+  font-size: 2.3rem;
+  line-height: 1.15;
+  margin-bottom: 1.6rem;
+}
+.dwb-hero-frame {
+  border: 1.5px solid var(--olive);
+  position: relative;
+  z-index: 2;
+}
+.dwb-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9.2;
+  background: linear-gradient(135deg, #e7ddc8, #d9cdaf);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: #8a7f60;
+  font-size: 0.75rem;
+}
+.dwb-placeholder-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.dwb-deco-line {
+  position: absolute;
+  height: 2px;
+  background: var(--olive);
+  transform: rotate(-42deg);
+}
+.dwb-line-tl {
+  width: 100px;
+  top: -20px;
+  left: -50px;
+}
+.dwb-line-br {
+  width: 120px;
+  bottom: -30px;
+  right: -60px;
+}
+
+/* ============ STEPS ============ */
+.dwb-steps {
+  background: var(--sage-light);
+}
+.dwb-section-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-bottom: 2.2rem;
+}
+.dwb-step-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+.dwb-step-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.dwb-step-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-right: 0.3rem;
+}
+
+/* ============ 3-COLUMN INFO ============ */
+.dwb-info-col {
+  padding: 3rem 2.2rem;
+}
+.dwb-info-mission {
+  background: var(--cream-2);
+}
+.dwb-info-resources {
+  background: var(--sage-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dwb-info-teach {
+  background: var(--cream-2);
+}
+.dwb-info-col h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.dwb-info-resources h3 {
+  font-size: 1.4rem;
+}
+.dwb-big-line {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.dwb-info-col p {
+  margin-bottom: 1rem;
+}
+.dwb-placeholder-small {
+  aspect-ratio: 1 / 1;
+  font-size: 0.7rem;
+}
+.dwb-placeholder-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============ SUPPORT CTA ============ */
+.dwb-support-h2 {
+  font-size: 1.5rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+.dwb-support-p {
+  color: var(--ink-soft);
+  margin-bottom: 1.4rem;
+}
+.dwb-support-media {
+  position: absolute;
+  right: 3rem;
+  bottom: 0.5rem;
+  width: 220px;
+}
+.dwb-placeholder-browser {
+  aspect-ratio: 4 / 3;
+  font-size: 0.7rem;
+  border: 1px solid var(--line);
+}
+
+/* ============ FOOTER ============ */
+.dwb-footer {
+  background: var(--footer-bg);
+  color: var(--white);
+}
+.dwb-footer h4 {
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.8rem;
+}
+.dwb-footer p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+.dwb-input {
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--white);
+  flex: 1 1 110px;
+}
+.dwb-input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.dwb-form-message {
+  font-size: 0.75rem;
+  margin-top: 0.6rem;
+  min-height: 1em;
+  color: #eef0df;
+}

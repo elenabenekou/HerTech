@@ -12,123 +12,358 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="LogoDigitalWellbeing.png"
-            alt="Digital Wellbeing Logo"
-            width="120"
-            height="100"
-            class="d-inline-block align-text-top"
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="LogoDigitalWellbeing.png"
+          alt="Digital Wellbeing Logo"
+          width="120"
+          height="100"
+          class="d-inline-block align-text-top"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
           />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <body>
+    <!-- ===== HERO ===== -->
+    <section class="dwb-hero">
+      <div class="container-fluid px-4 py-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5">
+            <p class="dwb-eyebrow">Η εποχή των #SafeSocial</p>
+            <h1 class="dwb-h1">
+              Καλώς ήρθατε στο Κέντρο για την Ψυχική Ευημερία
+            </h1>
+            <a href="#about" class="btn dwb-btn-darkpastelgreen"
+              >Σχετικά με εμάς</a
+            >
+          </div>
+
+          <div class="col-lg-7 position-relative">
+            <div class="dwb-hero-frame">
+              <div class="dwb-placeholder dwb-placeholder-hero">
+                <img
+                  src="mainpicturewebsite.jpg"
+                  alt="A hand touching a tree with a digital interface overlay"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-    <div class="bg-green p-4">
-      <div class="row">
-        <div class="col-6">
-          <img
-            src="LogoDigitalWellbeing.png"
-            alt="Digital Wellbeing"
-            class="img-fluid rounded-4"
-          />
-        </div>
-        <div class="col-6">
-          <h1>Καλως ήρθατε στο Κέντρο για την Ψυχική Ευημερία</h1>
+    </section>
 
-          <h2>
-            Η τεχνολογία πρέπει να υπηρετά τη ζωή σας, όχι να την καθοδηγεί.
-          </h2>
+    <!-- ===== 5 STEPS ===== -->
+    <section class="dwb-steps" id="steps">
+      <div class="container text-center py-5">
+        <h2 class="dwb-section-label">5 βήματα προς #SafeSocial</h2>
+
+        <div class="row justify-content-center gy-4 mb-4">
+          <div class="col-6 col-sm-4 col-lg-2">
+            <div class="dwb-step-circle mx-auto">
+              <svg
+                viewBox="0 0 48 48"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M6 10h30a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H18l-8 8V32H6a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4z"
+                />
+                <circle
+                  cx="14"
+                  cy="20"
+                  r="1.4"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <circle
+                  cx="21"
+                  cy="20"
+                  r="1.4"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <circle
+                  cx="28"
+                  cy="20"
+                  r="1.4"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+            </div>
+            <div class="dwb-step-label">
+              <span class="dwb-step-num">1</span> Ευαισθητοποίηση και εκπαίδευση
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-4 col-lg-2">
+            <div class="dwb-step-circle mx-auto">
+              <svg
+                viewBox="0 0 48 48"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="14" y="6" width="20" height="36" rx="3" />
+                <circle cx="24" cy="34" r="6" />
+                <path d="M24 31v3l2 2" />
+              </svg>
+            </div>
+            <div class="dwb-step-label">
+              <span class="dwb-step-num">2</span> Έλεγχος της κατανάλωσής σου
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-4 col-lg-2">
+            <div class="dwb-step-circle mx-auto">
+              <svg
+                viewBox="0 0 48 48"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M8 20a24 24 0 0 1 32 0" />
+                <path d="M14 27a15 15 0 0 1 20 0" />
+                <path d="M20 34a7 7 0 0 1 8 0" />
+                <circle
+                  cx="24"
+                  cy="40"
+                  r="1.6"
+                  fill="currentColor"
+                  stroke="none"
+                />
+                <line x1="6" y1="42" x2="42" y2="6" />
+              </svg>
+            </div>
+            <div class="dwb-step-label">
+              <span class="dwb-step-num">3</span> Ανάπτυξη ψηφιακών δεξιοτήτων
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-4 col-lg-2">
+            <div class="dwb-step-circle mx-auto">
+              <svg
+                viewBox="0 0 48 48"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <ellipse cx="20" cy="30" rx="6" ry="9" />
+                <circle cx="15" cy="18" r="2" />
+                <circle cx="20" cy="15" r="2" />
+                <circle cx="26" cy="16" r="2" />
+                <circle cx="30" cy="21" r="2" />
+              </svg>
+            </div>
+            <div class="dwb-step-label">
+              <span class="dwb-step-num">4</span> Καλό παράδειγμα προς μίμηση
+            </div>
+          </div>
+
+          <div class="col-6 col-sm-4 col-lg-2">
+            <div class="dwb-step-circle mx-auto">
+              <svg
+                viewBox="0 0 48 48"
+                width="28"
+                height="28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="24" cy="16" r="7" />
+                <path d="M10 40c0-9 6-15 14-15s14 6 14 15" />
+              </svg>
+            </div>
+            <div class="dwb-step-label">
+              <span class="dwb-step-num">5</span> Ευθύνη για όλους
+            </div>
+          </div>
+        </div>
+
+        <a href="#steps" class="btn dwb-btn-olive-dark"
+          >5 Βήματα προς <strong>#SafeSocial</strong></a
+        >
+      </div>
+    </section>
+
+    <!-- ===== THREE COLUMN INFO ===== -->
+    <section id="about">
+      <div class="row g-0">
+        <div class="col-lg-4 dwb-info-col dwb-info-mission">
+          <h3>Η αποστολή μας</h3>
           <p>
-            Η αποστολή μας είναι να προωθήσουμε υγιείς ψηφιακές συνήθειες και να
-            ενισχύσουμε τη συνολική ευημερία στην ψηφιακή εποχή.
+            Θέλουμε η τεχνολογία να μας βοηθάει, όχι να μας βλάπτει.
+            <strong
+              >Γι' αυτό ενημερώνουμε και στηρίζουμε τον κόσμο να τη χρησιμοποιεί
+              με μέτρο και συνείδηση για την ψυχική, σωματική και κοινωνική μας
+              υγεία.
+            </strong>
+          </p>
+          <a href="#about" class="btn dwb-btn-outline"
+            >Μάθετε περισσότερα για το Κέντρο για την Ψυχική Ευημερία στην
+            Τεχνολογία</a
+          >
+        </div>
+
+        <div class="col-lg-4 dwb-info-col dwb-info-resources" id="resources">
+          <h3>Ψάχνετε για πόρους ψυχικής ευημερίας στην τεχνολογία;</h3>
+          <p class="dwb-big-line">
+            Επισκεφθείτε το <strong>Resource Hub</strong> για να βρείτε
+            <strong>προσεκτικά επιλεγμένους πόρους</strong> που
+            <strong>προάγουν την ψυχική ευημερία στην τεχνολογία</strong> και
+            <strong>υποστηρίζουν την υπεύθυνη χρήση της τεχνολογίας</strong>.
+            <a href="#resources" class="dwb-underline">here.</a>
           </p>
         </div>
-      </div>
-    </div>
-    <div class="bg-green p-4">
-      <div class="container">
-        <div class="row justify-content-center text-center g-4">
-          <div class="col-12 col-md-5">
-            <div class="p-4 bg-white rounded-4">
-              <h1>Καλώς ήρθατε στο Κέντρο για την Ψυχική Ευημερία</h1>
-            </div>
-          </div>
 
-          <div class="col-12 col-md-5">
-            <div class="p-4 bg-white rounded-4">
-              <h2>
-                Η τεχνολογία πρέπει να υπηρετά τη ζωή σας, όχι να την καθοδηγεί.
-              </h2>
-              <p>
-                Η αποστολή μας είναι να προωθήσουμε υγιείς ψηφιακές συνήθειες
-                και να ενισχύσουμε τη συνολική ευημερία στην ψηφιακή εποχή.
-              </p>
+        <div class="col-lg-4 dwb-info-col dwb-info-teach" id="parents">
+          <h3>Διαπαιδαγώγηση και εκπαίδευση για γονείς και εκπαιδευτικούς</h3>
+          <p>
+            Μια ψηφιακή διευκόλυνση για την εκπαίδευση και την διαπαιδαγώγηση!
+          </p>
+          <a href="#resources" class="btn dwb-btn-outline"
+            >Πληροφορίες για την επίτευξη της ψυχικής ευημερίας</a
+          >
+          <div class="row g-2 mt-2">
+            <div class="col-6">
+              <div class="dwb-placeholder dwb-placeholder-small">
+                <img
+                  src="digital-health.jpg"
+                  alt="Mother and child using a tablet"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="dwb-placeholder dwb-placeholder-small">
+                <img
+                  src="Using-Technology-in-the-Classroom-to-Improve-Learning.jpg"
+                  alt="Students using technology in a classroom"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+    </section>
+
+    <!-- ===== SUPPORT CTA ===== -->
+    <section class="dwb-support" id="support">
+      <div class="container position-relative py-5 text-center">
+        <h2 class="dwb-support-h2">
+          Η δουλεια μας δεν μπορεί να υλοποιηθεί<br />χωρίς την υποστήριξή σας.
+        </h2>
+        <p class="dwb-support-p">
+          Είτε εκπροσωπείτε μια εταιρεία που ενδιαφέρεται να συνεργαστεί μαζί
+          μας είτε είστε απλώς ένα <br />άτομο που θέλει να κάνει τη διαφορά,η
+          συμβολή σας είναι σημαντική.<br />
+          Επικοινωνήστε μαζί μας για να μάθετε πώς μπορείτε να στηρίξετε το έργο
+          μας.
+        </p>
+        <a href="#contact" class="btn dwb-btn-olive">Στηρίξτε μας!</a>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ---- Join form ----
+        const form = document.getElementById("joinForm");
+        const message = document.getElementById("formMessage");
+
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const firstName = form.firstName.value.trim();
+            const country = form.country.value.trim();
+            const email = form.email.value.trim();
+
+            if (!firstName || !country || !email) {
+              message.textContent = "Please fill in every field.";
+              return;
+            }
+
+            // Placeholder for a real signup endpoint.
+            message.textContent = "Thanks for joining, " + firstName + "!";
+            form.reset();
+          });
+        }
+
+        // ---- Smooth scroll for in-page anchor links ----
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            const id = link.getAttribute("href").slice(1);
+            const target = document.getElementById(id);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
