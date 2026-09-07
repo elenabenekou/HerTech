@@ -5,7 +5,8 @@ body {
 #main-wrapper {
   margin: 20px auto;
   padding: 30px;
-  width: 60%;
+  width: 90%;
+  max-width: 800px;
   background-color: white;
   border-radius: 10px;
 }
@@ -32,4 +33,25 @@ body {
 
 #result {
   display: none;
+}
+
+.back-btn {
+  background: none;
+  border: 0;
+  color: #1e8c55;
+  font-size: 28px;
+  line-height: 1;
+  padding: 0;
+  position: absolute;
+}
+
+.back-btn:hover {
+  color: #176a40;
+}
+
+.result-app {
+  background-color: #dcffd8;
+  border: 1px solid #beeab9;
+  border-radius: 5px;
+  padding: 20px;
 }
