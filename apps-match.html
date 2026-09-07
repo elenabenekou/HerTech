@@ -249,6 +249,8 @@
         );
         const selectedOptionId = selectedOption ? selectedOption.id : null;
 
+        if(selectedOptionId) return;
+
         if (selectedOptionId === "question1-option1") {
           appTitleElement.textContent = "Forest";
           appDescriptionElement.textContent =
