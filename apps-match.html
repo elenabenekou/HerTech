@@ -208,6 +208,14 @@
       </div>
 
       <div id="result">
+        <button
+          class="back-btn"
+          id="back-btn"
+          type="button"
+          aria-label="Επιστροφή στις ερωτήσεις"
+        >
+          &larr;
+        </button>
         <h2 class="text-center">Τα αποτελέσματά σας</h2>
         <p class="text-center opacity-75">Η κατάλληλη εφαρμογή για εσάς!</p>
         <div class="result-app">
@@ -225,6 +233,12 @@
       const appDescriptionElement = document.getElementById("app-description");
 
       const submitBtn = document.getElementById("submit-btn");
+      const backBtn = document.getElementById("back-btn");
+
+      backBtn.addEventListener("click", function () {
+        resultElement.style.display = "none";
+        quizElement.style.display = "block";
+      });
 
       submitBtn.addEventListener("click", function () {
         quizElement.style.display = "none";
@@ -235,17 +249,17 @@
         );
         const selectedOptionId = selectedOption ? selectedOption.id : null;
 
-        if (selectedOption1 === "question1-option1") {
+        if (selectedOptionId === "question1-option1") {
           appTitleElement.textContent = "Forest";
           appDescriptionElement.textContent =
             "Η εφαρμογή Forest σας βοηθά να παραμείνετε συγκεντρωμένοι και να μειώσετε την απόσπαση της προσοχής σας. Καθώς χρησιμοποιείτε την εφαρμογή, φυτεύετε ένα εικονικό δέντρο που μεγαλώνει όσο παραμένετε συγκεντρωμένοι. Αν αποσπάσετε την προσοχή σας και χρησιμοποιήσετε το τηλέφωνό σας, το δέντρο θα μαραθεί.";
         }
-        if (selectedOption1 === "question1-option2") {
+        if (selectedOptionId === "question1-option2") {
           appTitleElement.textContent = "Freedom";
           appDescriptionElement.textContent =
             "Η εφαρμογή Freedom αποκλείει συγκεκριμένες εφαρμογές και ιστοτόπους σε όλες τις συσκευές σας ταυτόχρονα, επιτρέποντάς σας να τηρείτε το δικαίωμα αποσύνδεσης.";
         }
-        if (selectedOption1 === "question1-option3") {
+        if (selectedOptionId === "question1-option3") {
           appTitleElement.textContent = "Offtime";
           appDescriptionElement.textContent =
             "Η εφαρμογή Offtime σας επιτρέπει να δημιουργήσετε προσαρμοσμένα προφίλ που περιορίζουν την πρόσβαση σε εφαρμογές και ειδοποιήσεις, βοηθώντας σας να εστιάσετε στις σημαντικές δραστηριότητες.";
