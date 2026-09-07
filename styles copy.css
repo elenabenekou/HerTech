@@ -1,0 +1,49 @@
+.bg-primary {
+  background-color: #72ee8b !important;
+}
+body {
+  background-color: antiqueWhite;
+}
+
+#header {
+  text-align: center;
+  margin: 40px;
+}
+
+#hello {
+  color: #4a52ed;
+  font-size: 50px;
+}
+
+h2 {
+  color: #4a52ed;
+  font-size: 30px;
+}
+
+hr {
+  width: 50%;
+  border: 1px solid brown;
+}
+
+img {
+  width: 300px;
+  border-radius: 10%;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.box {
+  height: 200px;
+  border-radius: 10%;
+  margin: 5px;
+  background-color: #ee72cb;
+}
