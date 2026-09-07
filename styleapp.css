@@ -1,0 +1,35 @@
+body {
+  background-color: #f1ede2;
+}
+
+#main-wrapper {
+  margin: 20px auto;
+  padding: 30px;
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.question-num {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.form-check-input:checked {
+  background-color: #27b56c !important;
+  border-color: #27b56c !important;
+}
+
+.results-btn {
+  background-color: #27b56c;
+  color: white;
+}
+
+.results-btn:hover {
+  background-color: #1e8c55;
+  color: white;
+}
+
+#result {
+  display: none;
+}

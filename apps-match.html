@@ -10,45 +10,247 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="styleapp.css" />
   </head>
   <body>
-    <h1>Βρες την εφαρμογή που σου ταιριάζει</h1>
-    <p>
-      Ένας μικρός, προσωπικός οδηγός για πιο ήπιες συνήθειες χρήσης οθόνης.τ
-    </p>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="LogoDigitalWellbeing.png"
+            alt="Digital Wellbeing Logo"
+            width="120"
+            height="100"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
 
-    <div class="question-num">Ερώτηση 1 από 3</div>
-    <div class="question-title">Τι θα θέλατε να αλλάξετε;</div>
-    <div class="question-options">
-      <div class="question-option">
-        Αποσπάται η προσοχή μου οταν διαβάζω ή δουλεύω
+    <div id="main-wrapper">
+      <div id="quiz">
+        <h1 class="text-center">Βρες την εφαρμογή που σου ταιριάζει</h1>
+        <p class="text-center opacity-75">
+          Ένας μικρός, προσωπικός οδηγός για πιο ήπιες συνήθειες χρήσης οθόνης
+        </p>
+
+        <div class="question-num">Ερώτηση 1 από 3</div>
+        <div class="question-title fw-semibold">Τι θα θέλατε να αλλάξετε;</div>
+        <div class="question-options">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question1"
+              id="question1-option1"
+            />
+            <label class="form-check-label" for="question1-option1">
+              Αποσπάται η προσοχή μου οταν διαβάζω ή δουλεύω
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question1"
+              id="question1-option2"
+            />
+            <label class="form-check-label" for="question1-option2">
+              Μεταφέρω στρες στο σπίτι ή βλέπω συνεχώς τις ειδοπήσεις
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question1"
+              id="question1-option3"
+            />
+            <label class="form-check-label" for="question1-option3">
+              Κάνω απεριόριστο scroll στα social media
+            </label>
+          </div>
+        </div>
+        <div class="question-num">Ερώτηση 2 από 3</div>
+        <div class="question-title fw-semibold">
+          Πότε χρειάζεσαι περισσότερη υποστήριξη;
+        </div>
+        <div class="question-options">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question2"
+              id="question2-option1"
+            />
+            <label class="form-check-label" for="question2-option1">
+              Κατά τη διάρκεια της εργασίας μου
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question2"
+              id="question2-option2"
+            />
+            <label class="form-check-label" for="question2-option2">
+              Το μεσημέρι μετά απο μια δύσκολη μερα
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question2"
+              id="question2-option3"
+            />
+            <label class="form-check-label" for="question2-option3">
+              Τα σαββατοκύριακα και τις ελεύθερες ημέρες
+            </label>
+          </div>
+        </div>
+        <div class="question-num">Ερώτηση 3 από 3</div>
+        <div class="question-title fw-semibold">
+          Ποιά αλλαγή θα ήθελες να κάνεις;
+        </div>
+        <div class="question-options">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question3"
+              id="question3-option1"
+            />
+            <label class="form-check-label" for="question3-option1">
+              Να έρχεται μια ειδοποίηση για υπενθύμιση
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question3"
+              id="question3-option2"
+            />
+            <label class="form-check-label" for="question3-option2">
+              Να κλείνει αυτόματα η εφαρμογή
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="question3"
+              id="question3-option3"
+            />
+            <label class="form-check-label" for="question3-option3">
+              Να αλλάζει η διαμόρφωση της εφαρμογής
+            </label>
+          </div>
+        </div>
+
+        <button class="btn results-btn mt-3" id="submit-btn">Υποβολή</button>
       </div>
-      <div class="question-option">
-        Μεταφέρω στρες στο σπίτι ή βλέπω συνεχώς τις ειδοπήσεις
-      </div>
-      <div class="question-option">
-        Κάνω απεριόριστο scroll στα social media
+
+      <div id="result">
+        <h2 class="text-center">Τα αποτελέσματά σας</h2>
+        <p class="text-center opacity-75">Η κατάλληλη εφαρμογή για εσάς!</p>
+        <div class="result-app">
+          <h3 id="app-title"></h3>
+          <p id="app-description"></p>
+        </div>
       </div>
     </div>
-    <div class="question-num">Ερώτηση 2 από 3</div>
-    <div class="question-title">Πότε χρειάζεσαι περισσότερη υποστήριξη;</div>
-    <div class="question-options">
-      <div class="question-option">Κατά τη διάρκεια της εργασίας μου</div>
-      <div class="question-option">Το μεσημέρι μετά απο μια δύσκολη μερα</div>
-      <div class="question-option">
-        Τα σαββατοκύριακα και τις ελεύθερες ημέρες
-      </div>
-    </div>
-    <div class="question-num">Ερώτηση 3 από 3</div>
-    <div class="question-title">Ποιά αλλαγή θα ήθελες να κάνεις;</div>
-    <div class="question-options">
-      <div class="question-option">
-        Να έρχεται μια ειδοποίηση για υπενθύμιση
-      </div>
-      <div class="question-option">Να κλείνει αυτόματα η εφαρμογή</div>
-      <button type="button" class="question-option">
-        Να αλλάζει η διαμόρφωση της εφαρμογής
-      </button>
-    </div>
+
+    <script>
+      const quizElement = document.getElementById("quiz");
+      const resultElement = document.getElementById("result");
+
+      const appTitleElement = document.getElementById("app-title");
+      const appDescriptionElement = document.getElementById("app-description");
+
+      const submitBtn = document.getElementById("submit-btn");
+
+      submitBtn.addEventListener("click", function () {
+        quizElement.style.display = "none";
+        resultElement.style.display = "block";
+
+        const selectedOption = document.querySelector(
+          'input[name="question1"]:checked',
+        );
+        const selectedOptionId = selectedOption ? selectedOption.id : null;
+
+        if (selectedOption1 === "question1-option1") {
+          appTitleElement.textContent = "Forest";
+          appDescriptionElement.textContent =
+            "Η εφαρμογή Forest σας βοηθά να παραμείνετε συγκεντρωμένοι και να μειώσετε την απόσπαση της προσοχής σας. Καθώς χρησιμοποιείτε την εφαρμογή, φυτεύετε ένα εικονικό δέντρο που μεγαλώνει όσο παραμένετε συγκεντρωμένοι. Αν αποσπάσετε την προσοχή σας και χρησιμοποιήσετε το τηλέφωνό σας, το δέντρο θα μαραθεί.";
+        }
+        if (selectedOption1 === "question1-option2") {
+          appTitleElement.textContent = "Freedom";
+          appDescriptionElement.textContent =
+            "Η εφαρμογή Freedom αποκλείει συγκεκριμένες εφαρμογές και ιστοτόπους σε όλες τις συσκευές σας ταυτόχρονα, επιτρέποντάς σας να τηρείτε το δικαίωμα αποσύνδεσης.";
+        }
+        if (selectedOption1 === "question1-option3") {
+          appTitleElement.textContent = "Offtime";
+          appDescriptionElement.textContent =
+            "Η εφαρμογή Offtime σας επιτρέπει να δημιουργήσετε προσαρμοσμένα προφίλ που περιορίζουν την πρόσβαση σε εφαρμογές και ειδοποιήσεις, βοηθώντας σας να εστιάσετε στις σημαντικές δραστηριότητες.";
+        }
+      });
+    </script>
   </body>
 </html>
