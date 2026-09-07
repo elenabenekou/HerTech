@@ -1,14 +1,183 @@
 <!doctype html>
-<html lang="en">
+<html lang="el">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Screen Time Calculator</title>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <div class="bg-primary text-white rounded-4 text-center mx-4 my-3 p-5">
-      Screen Time Calculator
+    <div class="container">
+      <div class="title-box">
+        <h1>Screen Time Calculator</h1>
+      </div>
+
+      <div class="calculator">
+        <h2>Επέλεξε πόσο χρόνο καταναλώνεις κατά μέσο όρο στο κινητό σου:</h2>
+
+        <div class="slider-area">
+          <input
+            type="range"
+            id="screenSlider"
+            min="0"
+            max="16"
+            step="0.5"
+            value="4"
+          />
+
+          <div class="slider-values">
+            <span>0 ώρες</span>
+            <span>16 ώρες</span>
+          </div>
+
+          <p class="selected-time">
+            <span id="dailyHours">4</span> ώρες την ημέρα
+          </p>
+        </div>
+
+        <!-- Μετατροπές -->
+        <div class="time-results">
+          <div class="time-box">
+            <h3>Εβδομάδα</h3>
+            <p><span id="weekly">28</span> ώρες</p>
+          </div>
+
+          <div class="time-box">
+            <h3>Μήνας</h3>
+            <p><span id="monthly">120</span> ώρες</p>
+          </div>
+
+          <div class="time-box">
+            <h3>Χρόνος</h3>
+            <p><span id="yearly">1460</span> ώρες</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="activities-title">
+        Δες τι θα μπορούσες να κάνεις σε αυτόν τον χρόνο κατά μέσο όρο:
+      </h2>
+
+      <div class="activities">
+        <div class="activity-card">
+          <div class="icon">📚</div>
+          <h3>Βιβλία</h3>
+          <p>Θα μπορούσες να διαβάσεις περίπου</p>
+          <strong id="books">24</strong>
+          <p>βιβλία τον χρόνο.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="icon">🌍</div>
+          <h3>Γλώσσες</h3>
+          <p>Θα μπορούσες να αφιερώσεις χρόνο για να μάθεις</p>
+          <strong id="languages">1</strong>
+          <p>νέες γλώσσες.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="icon">🎸</div>
+          <h3>Όργανα</h3>
+          <p>Θα μπορούσες να εξασκηθείς περίπου</p>
+          <strong id="instrument">365</strong>
+          <p>ώρες σε ένα όργανο.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="icon">🎬</div>
+          <h3>Ταινίες</h3>
+          <p>Θα μπορούσες να παρακολουθήσεις περίπου</p>
+          <strong id="movies">730</strong>
+          <p>ταινίες.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="icon">🏃</div>
+          <h3>Γυμναστική</h3>
+          <p>Θα μπορούσες να κάνεις περίπου</p>
+          <strong id="exercise">730</strong>
+          <p>45λεπτες προπονήσεις.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="icon">🧠</div>
+          <h3>Skills</h3>
+          <p>Θα μπορούσες να μάθεις περίπου</p>
+          <strong id="skills">12</strong>
+          <p>νέα skills.</p>
+        </div>
+      </div>
+
+      <p class="note">
+        * Οι υπολογισμοί είναι ενδεικτικοί και βασίζονται σε μέσους χρόνους.
+      </p>
     </div>
+
+    <script>
+      const slider = document.getElementById("screenSlider");
+
+      const dailyHours = document.getElementById("dailyHours");
+      const weekly = document.getElementById("weekly");
+      const monthly = document.getElementById("monthly");
+      const yearly = document.getElementById("yearly");
+
+      const books = document.getElementById("books");
+      const languages = document.getElementById("languages");
+      const instrument = document.getElementById("instrument");
+      const movies = document.getElementById("movies");
+      const exercise = document.getElementById("exercise");
+      const skills = document.getElementById("skills");
+
+      function calculateScreenTime() {
+        let hoursPerDay = Number(slider.value);
+
+        // Μετατροπές χρόνου
+        let hoursPerWeek = hoursPerDay * 7;
+        let hoursPerMonth = hoursPerDay * 30;
+        let hoursPerYear = hoursPerDay * 365;
+
+        // Εμφάνιση χρόνου
+        dailyHours.textContent = hoursPerDay;
+        weekly.textContent = Math.round(hoursPerWeek);
+        monthly.textContent = Math.round(hoursPerMonth);
+        yearly.textContent = Math.round(hoursPerYear);
+
+        // Ένα βιβλίο χρειάζεται περίπου 6 ώρες
+        let numberOfBooks = hoursPerYear / 6;
+
+        // Μια γλώσσα χρειάζεται περίπου 500 ώρες για βασικό επίπεδο
+        let numberOfLanguages = hoursPerYear / 500;
+
+        // Εξάσκηση μουσικού οργάνου
+        let instrumentHours = hoursPerYear;
+
+        // Μια ταινία διαρκεί περίπου 2 ώρες
+        let numberOfMovies = hoursPerYear / 2;
+
+        // Μία προπόνηση = 45 λεπτά
+        let numberOfExercises = hoursPerYear / 0.75;
+
+        // Ένα skill απαιτεί περίπου 50 ώρες
+        let numberOfSkills = hoursPerYear / 50;
+
+        books.textContent = Math.floor(numberOfBooks);
+
+        languages.textContent = numberOfLanguages.toFixed(1);
+
+        instrument.textContent = Math.floor(instrumentHours);
+
+        movies.textContent = Math.floor(numberOfMovies);
+
+        exercise.textContent = Math.floor(numberOfExercises);
+
+        skills.textContent = Math.floor(numberOfSkills);
+      }
+
+      slider.addEventListener("input", calculateScreenTime);
+
+      calculateScreenTime();
+    </script>
   </body>
 </html>
